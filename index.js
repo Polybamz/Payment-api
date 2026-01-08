@@ -1,4 +1,5 @@
 const express = require('express')
+const paymentRouter = require('./src/route/dodo-route/route');
 const cripto = require('crypto');
 const dotenv = require('dotenv');
 dotenv.config();
@@ -14,11 +15,15 @@ app.use(express.json({
     }
 }));
 
+
+
 app.get('/', (req, res) => {
     /// return an html template explaining the api
     res.send('<h1>Dodo Payments API</h1><p>This is a simple API to demonstrate Dodo Payments integration.</p>');
 });
 
+// Payment API
+app.use('/api/payment', paymentRouter);
 // checkout wehook
 app.post('/dodo/webhook', (req,res)=> {
     const signature = req.headers["webhook-signature"] || ''
