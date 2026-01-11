@@ -13,7 +13,7 @@ if (!apiKey) {
 
 const client = new DodoPayments({
   bearerToken: apiKey,
-  environment: 'test_mode'
+  environment: 'live_mode', // or 'test_mode'
 });
 
 const generateAccessCode = async (legnth = 8)=>{
