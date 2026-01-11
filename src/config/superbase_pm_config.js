@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 const supabaseUrl = process.env.PM_SUPABASE_URL;
-const supabaseKey = process.env.PM_SUPABASE_PUBLISHABLE_KEY
+const supabaseKey = process.env.PM_SUPABASE_PUBLISHABLE_KEY;
 
 const supabase = createClient(supabaseUrl,supabaseKey);
 
