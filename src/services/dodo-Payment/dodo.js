@@ -13,7 +13,7 @@ if (!apiKey) {
 
 const client = new DodoPayments({
   bearerToken: apiKey,
-  environment: 'test_mode' // 'live_mode'
+  environment: 'test_mode'
 });
 
 const generateAccessCode = async (legnth = 8)=>{
@@ -22,7 +22,7 @@ const generateAccessCode = async (legnth = 8)=>{
   for (let i = 0; i < legnth; i++){
     code = characters.charAt(Math.floor(Math.random()* characters.length));
   }
-  await supabase.
+  
   return `PM_`+ code
 }
 
