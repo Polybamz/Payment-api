@@ -2,6 +2,7 @@ const express = require('express')
 const paymentRouter = require('./src/route/dodo-route/route');
 const cripto = require('crypto');
 const dotenv = require('dotenv');
+const cors = require('cors');
 dotenv.config();
 
 const app = express();
@@ -13,6 +14,11 @@ app.use(express.json({
         // store raw body as a string for signature computation
         req.rawBody = buf && buf.toString();
     }
+}));
+app.use(cors({
+  origin: 'http://localhost:8080', // Allow only your frontend
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 

@@ -1,4 +1,5 @@
 const DodoPayments = require("dodopayments");
+const supabase = require('../../config/superbase_pm_config')
 const dotenv = require("dotenv");
 
 dotenv.config();
@@ -14,6 +15,16 @@ const client = new DodoPayments({
   bearerToken: apiKey,
   environment: 'live_mode'
 });
+
+const generateAccessCode = async (legnth = 8)=>{
+  const characters = `ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvxyz0123456789`;
+  const code = ''
+  for (let i = 0; i < legnth; i++){
+    code = characters.charAt(Math.floor(Math.random()* characters.length));
+  }
+  await supabase.
+  return `PM_`+ code
+}
 
 const creatCheckOut = async () => {
   console.log('Creating checkout session');
