@@ -49,8 +49,8 @@ const creatCheckOut = async (email) => {
         email: email,
         name: email
       },
-      return_url: `https://trivex-pm.vercel.app?code=`+ accessCode,
-      cancel_url: 'https://trivex-pm.vercel.app?payment=cancelled',
+      return_url: `https://pm-trivex.vercel.app?code=`+ accessCode,
+      cancel_url: 'https://pm-trivex.vercel.app?payment=cancelled',
 
   
       //metadata: { access_code: accessCode,}
