@@ -7,7 +7,7 @@ class PmAuth {
                 email,password
             })
             if(error) throw Error(error)
-            return user
+            //return user
 
         } catch (er){
             throw Error(er)
